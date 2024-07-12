@@ -238,7 +238,7 @@ class Exp_Informer(Exp_Basic):
             test_loss = self.vali(test_data, test_loader, criterion)
             self.train_losses.append(train_loss)
             self.test_losses.append(test_loss)
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f}Test Loss: {3:.7f}".format(
+            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Test Loss: {3:.7f}".format(
                 epoch + 1, train_steps, train_loss, test_loss))
             early_stopping(test_loss, self.model, path)
             if early_stopping.early_stop:
