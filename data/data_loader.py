@@ -291,6 +291,7 @@ class Dataset_Custom(Dataset):
                 self.scaler = StandardScaler()
                 train_data = df_data[border1s[0]:border2s[0]]
                 self.scaler.fit(train_data.values)
+                joblib.dump(self.scaler, os.path.join(self.root_path, 'scaler.pkl'))
                 data = self.scaler.transform(df_data.values)                
         else:
             data = df_data.values
